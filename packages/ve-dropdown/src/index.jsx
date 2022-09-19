@@ -292,15 +292,15 @@ export default {
             // console.log("nextVisible22::", nextVisible);
             const { beforeVisibleChange, isDropdownVisible } = this;
 
-            if (nextVisible === isDropdownVisible) {
-                return false;
-            }
-
             if (isFunction(beforeVisibleChange)) {
                 // next visible
                 return beforeVisibleChange({
                     nextVisible,
                 });
+            }
+
+            if (nextVisible === isDropdownVisible) {
+                return false;
             }
         },
 
